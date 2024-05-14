@@ -1,5 +1,12 @@
-class Solution:
-    def firstMissingPositive(self, nums: List[int]) -> int:
-        return min({*range(1, len(nums)+2)} - {*nums})
-
+class Solution(object):
+    def firstMissingPositive(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        m = 1
+        nums = set(nums)
+        while m in nums:
+            m+=1
+        return m
         
